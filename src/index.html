@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Daily Journal</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="journal.css" />
+  </head>
+  <body>
+    <h1>Daily Journal</h1>
+    <form action="">
+      <fieldset>
+        <label for="journalDate">Date of entry</label>
+        <input type="date" name="journalDate" id="journalDate" />
+      </fieldset>
+      <fieldset>
+        <label for="journalConcepts">Concepts covered</label>
+        <input type="text" name="journalConcepts" id="journalConcepts" />
+      </fieldset>
+      <fieldset>
+        <label for="journalEntry">Journal Entry</label>
+        <textarea name="journalEntry" id="journalEntry"></textarea>
+      </fieldset>
+      <fieldset>
+        <label for="journelMood">Mood of the day</label>
+        <select name="journelMood" id="journelMood">
+          <option value="happy">Happy</option>
+          <option value="sad">Sad</option>
+          <option value="fine">Fine</option>
+        </select>
+      </fieldset>
+      <button type="button">Record journal entry</button>
+    </form>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+  </body>
+</html>
