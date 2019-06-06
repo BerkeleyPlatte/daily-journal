@@ -3,8 +3,6 @@ function cl(data) {
 }
 cl("working");
 
-let journalEntries = [];
-
 let sixSix = {
   date: "6/6",
   concepts: "api and callback functions",
@@ -23,21 +21,47 @@ let sixFour = {
   content: "two days ago we did more js",
   mood: "fine"
 };
-journalEntries.push(sixSix);
-cl(journalEntries);
 
-const makeJournalEntryComponents = journalEntries => {
-  for (let i = 0; i < journalEntries.length; i++) {
-    return `<h1>${journalEntries[i].concepts}</h1>
-            <p>${journalEntries[i].content}</p>
-            <p>${journalEntries[i].date}</p>`;
-  }
-};
+fetch("http://localhost:8088/entries")
+  .then(entries => entries.json())
+  .then(entries => {
+    const makeJournalEntryComponents = t => {
+      return `<h1>${t.concepts}</h1>
+                  <p>${t.content}</p>
+                  <p>${t.mood}</p>`;
+    };
+    const renderJournalEntries = makeJournalEntryComponents => {
+      for (let i = 0; i < entries.length; i++) {
+        document.querySelector(".entryLog").innerHTML += makeJournalEntryComponents(
+          entries[i]
+        );
+      }
+    };
+    renderJournalEntries(makeJournalEntryComponents);
+  });
 
-const renderJournalEntries = makeJournalEntryComponents => {
-  document.querySelector(".entryLog").innerHTML = makeJournalEntryComponents(
-    journalEntries
-  );
-};
-
-renderJournalEntries(makeJournalEntryComponents);
+// let testArr = [
+//   {
+//     key: "value",
+//     lock: "metal",
+//     status: "locked"
+//   },
+//   {
+//     key: "golden",
+//     lock: "big",
+//     status: "unlocked"
+//   }
+// ];
+// const makeJournalEntryComponents = t => {
+//   return `<h1>${t.key}</h1>
+//               <p>${t.lock}</p>
+//               <p>${t.status}</p>`;
+// };
+// const renderJournalEntries = makeJournalEntryComponents => {
+//   for (let i = 0; i < testArr.length; i++) {
+//     document.querySelector(".entryLog").innerHTML += makeJournalEntryComponents(
+//       testArr[i]
+//     );
+//   }
+// };
+// renderJournalEntries(makeJournalEntryComponents);
