@@ -25,19 +25,20 @@
         <textarea name="journalEntry" id="journalEntry"></textarea>
       </fieldset>
       <fieldset>
-        <label for="journelMood">Mood of the day</label>
-        <select name="journelMood" id="journelMood">
+        <label for="journalMood">Mood of the day</label>
+        <select name="journalMood" id="journalMood">
           <option value="happy">Happy</option>
           <option value="sad">Sad</option>
           <option value="fine">Fine</option>
         </select>
       </fieldset>
-      <button type="button">Record journal entry</button>
+      <button id="recordBtn" type="button">Record journal entry</button>
     </form>
     <article class="entryLog"></article>
 
     <script src="scripts/entryComponent.js"></script>
     <script src="scripts/entriesDOM.js"></script>
     <script src="scripts/data.js"></script>
+    <script src="scripts/journal.js"></script>
   </body>
 </html>
