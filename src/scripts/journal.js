@@ -11,7 +11,6 @@ document.querySelector("#recordBtn").addEventListener("click", () => {
     saveJournalEntry(newJournalEntry)
       .then(getData)
       .then(entries => {
-        // let reverseEntries = entries.reverse()
         renderJournalEntries(entries);
       });
   }
