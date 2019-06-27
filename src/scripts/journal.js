@@ -25,3 +25,7 @@ function saveJournalEntry(vari) {
     body: JSON.stringify(vari)
   });
 }
+
+document.querySelector("#refresh").addEventListener("click", () => {
+  location.reload()
+})
